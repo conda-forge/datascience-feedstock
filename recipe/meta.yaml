@@ -1,13 +1,13 @@
 {% set name = "datascience" %}
-{% set version = "0.17.6" %}
+{% set version = "0.18.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datascience-{{ version }}.tar.gz
-  sha256: 5911f3f3e7c6fb71a2a6c3330170b70d318db012ca3f6c17313bf589624801dd
+  url: https://files.pythonhosted.org/packages/24/c8/171ab6562bca1fa3ae6931a59068e9195be7e7399167f3d2573ee1c87486/datascience-0.18.0.tar.gz
+  sha256: 0fae1517b6d77d4554e1a1fd1eea9118ebaca142689b2f6576ab0e8612c9f756
 
 build:
   noarch: python
@@ -47,4 +47,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - yuvipanda
+    - whyvineet
