@@ -18,6 +18,7 @@ requirements:
   host:
     - python >=3.6
     - pytest
+    - setuptools
     - pip
   run:
     - python >=3.6
@@ -38,6 +39,7 @@ test:
     - pip check
   requires:
     - pip
+    - python
 
 about:
   home: https://github.com/data-8/datascience
@@ -47,4 +49,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - whyvineet
+    - yuvipanda
