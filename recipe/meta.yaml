@@ -1,5 +1,6 @@
 {% set name = "datascience" %}
 {% set version = "0.18.0" %}
+{% set python_min = "3.7" %}
 
 package:
   name: {{ name|lower }}
@@ -16,12 +17,12 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pytest
     - setuptools
     - pip
   run:
-    - python >=3.6
+    - python {{ python_min }}
     - folium >=0.9.1
     - setuptools
     - matplotlib-base >=3.0.0
@@ -39,7 +40,7 @@ test:
     - pip check
   requires:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - pytest
 
 about:
