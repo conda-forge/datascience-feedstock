@@ -21,6 +21,7 @@ requirements:
     - pytest
     - setuptools
     - pip
+    - importlib-metadata  # [py<38]
   run:
     - python {{ python_min }}
     - folium >=0.9.1
@@ -32,6 +33,7 @@ requirements:
     - ipython
     - plotly
     - branca
+    - importlib-metadata  # [py<38]
 
 test:
   imports:
