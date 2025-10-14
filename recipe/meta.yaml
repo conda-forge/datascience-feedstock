@@ -11,7 +11,6 @@ source:
   sha256: 0fae1517b6d77d4554e1a1fd1eea9118ebaca142689b2f6576ab0e8612c9f756
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
@@ -23,7 +22,7 @@ requirements:
     - pip
     - importlib-metadata  # [py<38]
   run:
-    - python {{ python_min }}
+    - python >={{ python_min }}
     - folium >=0.9.1
     - setuptools
     - matplotlib-base >=3.0.0
@@ -42,7 +41,7 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
+    - python >={{ python_min }}
     - pytest
 
 about:
