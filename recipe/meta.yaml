@@ -1,8 +1,13 @@
+{% set name = "datascience" %}
+{% set version = "0.18.0" %}
+{% set python_min = "3.6" %}
+
 package:
-  name: datascience
-  version: 0.18.0
+  name: {{ name|lower }}
+  version: {{ version }}
+
 source:
-  url: https://pypi.org/packages/source/d/datascience/datascience-0.18.0.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/datascience-{{ version }}.tar.gz
   sha256: 0fae1517b6d77d4554e1a1fd1eea9118ebaca142689b2f6576ab0e8612c9f756
 
 build:
@@ -12,13 +17,13 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pytest
     - setuptools
     - pip
-    - importlib-metadata  # [py<38]
+    - importlib-metadata
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - folium >=0.9.1
     - setuptools
     - matplotlib-base >=3.0.0
@@ -28,7 +33,7 @@ requirements:
     - ipython
     - plotly
     - branca
-    - importlib-metadata  # [py<38]
+    - importlib-metadata
 
 test:
   imports:
@@ -37,7 +42,7 @@ test:
     - pip check
   requires:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - pytest
 
 about:
