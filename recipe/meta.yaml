@@ -1,6 +1,5 @@
 {% set name = "datascience" %}
 {% set version = "0.18.0" %}
-{% set python_min = "3.7" %}
 
 package:
   name: {{ name|lower }}
@@ -17,7 +16,7 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python >={{ python_min }}
     - pytest
     - setuptools
     - pip
@@ -42,7 +41,6 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
     - pytest
 
 about:
