@@ -1,26 +1,28 @@
 {% set name = "datascience" %}
-{% set version = "0.17.6" %}
+{% set version = "0.18.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datascience-{{ version }}.tar.gz
-  sha256: 5911f3f3e7c6fb71a2a6c3330170b70d318db012ca3f6c17313bf589624801dd
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/datascience-{{ version }}.tar.gz
+  sha256: 0fae1517b6d77d4554e1a1fd1eea9118ebaca142689b2f6576ab0e8612c9f756
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: "{{ PYTHON }} -m pip install . -vv"
   number: 0
 
 requirements:
   host:
-    - python >=3.6
+    - python >={{ python_min }}
     - pytest
+    - setuptools
     - pip
+    - importlib-metadata
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - folium >=0.9.1
     - setuptools
     - matplotlib-base >=3.0.0
@@ -30,6 +32,7 @@ requirements:
     - ipython
     - plotly
     - branca
+    - importlib-metadata
 
 test:
   imports:
@@ -38,6 +41,7 @@ test:
     - pip check
   requires:
     - pip
+    - pytest
 
 about:
   home: https://github.com/data-8/datascience
