@@ -1,5 +1,5 @@
 {% set name = "datascience" %}
-{% set version = "0.18.0" %}
+{% set version = "0.18.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/datascience-{{ version }}.tar.gz
-  sha256: 0fae1517b6d77d4554e1a1fd1eea9118ebaca142689b2f6576ab0e8612c9f756
+  sha256: 233a2f70ce940980f7a8b88ab76c501e5518766d5d8dffc6ec53d0449c399faf
 
 build:
   noarch: python
@@ -16,7 +16,7 @@ build:
 
 requirements:
   host:
-    - python >={{ python_min }}
+    - python {{ python_min }}
     - pytest
     - setuptools
     - pip
@@ -42,6 +42,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
 
 about:
   home: https://github.com/data-8/datascience
