@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/datascience-{{ version }}.tar.gz
-  sha256: 0fae1517b6d77d4554e1a1fd1eea9118ebaca142689b2f6576ab0e8612c9f756
+  sha256: 233a2f70ce940980f7a8b88ab76c501e5518766d5d8dffc6ec53d0449c399faf
 
 build:
   noarch: python
@@ -26,7 +26,8 @@ requirements:
     - folium >=0.9.1
     - setuptools
     - matplotlib-base >=3.0.0
-    - pandas
+    -curl -sL https://pypi.org/packages/source/datascience/datascience/datascience-0.18.1.tar.gz | openssl sha256
+     pandas
     - scipy
     - numpy
     - ipython
