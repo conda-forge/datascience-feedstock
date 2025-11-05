@@ -16,7 +16,7 @@ build:
 
 requirements:
   host:
-    - python >={{ python_min }}
+    - python {{ python_min }}
     - pytest
     - setuptools
     - pip
@@ -42,6 +42,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
 
 about:
   home: https://github.com/data-8/datascience
