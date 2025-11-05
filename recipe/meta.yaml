@@ -26,8 +26,7 @@ requirements:
     - folium >=0.9.1
     - setuptools
     - matplotlib-base >=3.0.0
-    -curl -sL https://pypi.org/packages/source/datascience/datascience/datascience-0.18.1.tar.gz | openssl sha256
-     pandas
+    - pandas
     - scipy
     - numpy
     - ipython
